@@ -9,34 +9,39 @@ Sometimes I need to look for a certain input in all pages of a site, and make a 
 ### How to use it
 
 On the terminal, inside the directory you want to create the list, execute the inputvalues.php file, passing as arguments the path to your html files, and the name of the input. For example:
-
-> php path/to/inputvalues.php /html/folder input-name
-
+```
+php path/to/inputvalues.php /html/folder input-name
+```
 Or make this inputvalues.bat (on Windows) inside a bin/ folder:
-
+```
 @ECHO OFF
 setlocal DISABLEDELAYEDEXPANSION
 SET BIN_TARGET=%~dp0../inputvalues/inputvalues
 php "%BIN_TARGET%".php %*
-
+```
 Add the path to this bin/ folder into the environment variable PATH. The file tree will be like this:
-
-scripts
-	bin
-		inputvalues.bat
-		otherscripts.bat
-	inputvalues
-		autoload.php
-		inputvalues.php
-		README.md
-		src
-			Listing.php
-			Origin.php
-	otherscripts
-	.
-	.
-	.
-
+```
+├───scripts
+    │
+    ├───bin
+    │       inputvalues.bat
+    │       otherscripts.bat
+    │
+    ├───inputvalues
+    │   │   autoload.php
+    │   │   inputvalues.php
+    │   │   README.md
+    │   │
+    │   └───src
+    │           Listing.php
+    │           Origin.php
+    │
+    ├───otherscripts
+    .
+    .
+    .
+```
 Then do this way from any directory without php command or .php extension:
-
-> inputvalues /html/folder input-name
+```
+inputvalues /html/folder input-name
+```
